@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>DIOGENES PUENTES</title>
+  </head>
+  <body>
+
+
+    <img src="imagem.png" >
+      <h1>DIOGENES PUENTES </h1>
+
+      <div>
+
+        <input placeholder="digite seu nome completo" type="text" id="nome">
+        <input placeholder="ano do seu nascimento" type="number" id="nascimento">
+
+  
+        <button onclick="clickNoBotao()">verificar"</button>
+      </div>
+
+
+      <h4></h4>
+
+      <script>
+        
+        function clickNoBotao() {
+          const inputNome = document.getElementById('nome').value 
+        
+          const inputNascimento = document.getElementById('nascimento').value 
+
+          const anoAtual = new Date().getFullYear();
+          
+          //responsavel por retornar a idade do usuario
+          const idade =anoAtual - inputNascimento
+
+          if(idade >= 18) {
+              const mensagem = `permitir a compra do ${inputNome} pois ele possui mais de 18 anos!`
+
+              document.querySelector('h4').innerText = mensagem
+
+          } else {
+            const mensagem = `nao permitir a compra do ${inputNome} pois ele nao possui mais de 18 anos!`
+
+              document.querySelector('h4').innerText = mensagem
+
+          }
+      
+          
+        }
+
+      </script>
+  </body>
+</html>
+22
